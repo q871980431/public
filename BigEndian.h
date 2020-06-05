@@ -25,7 +25,7 @@ namespace endian{
 	{
 	public:
 		BigEndian() :m_size(0) {};
-		BigEndian(std::string &strContent) {
+		BigEndian(const std::string &strContent) {
 			int32_t iLen = strContent.length();
 			if (iLen > BUFF_SIZE)
 				iLen = BUFF_SIZE;
@@ -59,7 +59,7 @@ namespace endian{
 		template<size_t N>
 		void InnerPick(int32_t iOffSet, void *content)
 		{
-			if (iOffSet + N <= m_size)
+			if (iOffSet + N <= (size_t)m_size)
 			{
 				if (IS_BIG_ENDIAN)
 					memcpy(content, m_buff + iOffSet, N);
