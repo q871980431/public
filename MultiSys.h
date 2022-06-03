@@ -4,6 +4,7 @@
 #include "LinSys.h"
 #include <functional>
 #include <stdarg.h>
+#include <iostream>
 
 #define NEW     new
 #define DEL     delete
